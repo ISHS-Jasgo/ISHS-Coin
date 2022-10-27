@@ -63,4 +63,4 @@ coin.startValue = 100000;
 coin.fluctuation = 50;
 setInterval(() => {
   coin.update();
-}, 1000);
+}, 5000);
