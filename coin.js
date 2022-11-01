@@ -64,7 +64,7 @@ class Coin {
       this._current -= Math.floor(
         ((this._fluctuation / 100) * this._startValue * random) / 100
       );
-      if (this._current < 1000) this._current = 1000;
+      if (this._current < 1000) return false;
       console.log(
         this._current +
           " ▼" +
@@ -72,13 +72,17 @@ class Coin {
           "%"
       );
     }
+    return true;
   }
 
   /**
    * @description 코인 가격 초기화
    */
-  reset() {
+   delist() {
     this._current = this._startValue;
+    for(let player in this.playerData) {
+      this.playerData[player].stock = 0;
+    }
   }
 
   /**
