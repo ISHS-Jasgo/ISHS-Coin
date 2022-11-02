@@ -56,6 +56,7 @@ setInterval(async () => {
   money.innerHTML = `현재 남은 돈: ${json1.money}원`;
   if (!Number.isInteger(json2.current)) {
     current.innerHTML = json2.current;
+    stock.innerHTML = "현재 가지고 있는 코인: 0개";
   } else {
     current.innerHTML = `현재 인곽 코인 가격: ${json2.current}원`;
   }

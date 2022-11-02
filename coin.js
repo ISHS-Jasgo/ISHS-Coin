@@ -53,6 +53,9 @@ class Coin {
       this._current += Math.floor(
         ((this._fluctuation / 100) * this._startValue * random) / 100
       );
+      if (this._current >= 500000) {
+        this.split();
+      }
       console.log(
         this._current +
           " ▲" +
@@ -76,12 +79,21 @@ class Coin {
   }
 
   /**
-   * @description 코인 가격 초기화
+   * @description 상장폐지
    */
    delist() {
     this._current = this._startValue;
     for(let player in this.playerData) {
       this.playerData[player].stock = 0;
+    }
+  }
+  /**
+   * @description 액면분할
+   */
+  split() {
+    this._current = Math.floor(this._current/5);
+    for(let player in this.playerData) {
+      this.playerData[player].stock *= 5;
     }
   }
 
