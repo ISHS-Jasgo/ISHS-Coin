@@ -53,6 +53,10 @@ setInterval(async () => {
   let res2 = await fetch(location.href + "current/", { method: "POST" });
   let json1 = await res1.json();
   let json2 = await res2.json();
+  let res = await fetch(location.href + `stock/${nameValue}`, {
+    method: "POST",
+  });
+  let json = await res.json();
   money.innerHTML = `현재 남은 돈: ${json1.money}원`;
   if (!Number.isInteger(json2.current)) {
     current.innerHTML = json2.current;
@@ -60,4 +64,5 @@ setInterval(async () => {
   } else {
     current.innerHTML = `현재 인곽 코인 가격: ${json2.current}원`;
   }
+  stock.innerHTML = `현재 가지고 있는 코인: ${json.stock}개`;
 }, 100);

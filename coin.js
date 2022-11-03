@@ -81,9 +81,9 @@ class Coin {
   /**
    * @description 상장폐지
    */
-   delist() {
+  delist() {
     this._current = this._startValue;
-    for(let player in this.playerData) {
+    for (let player in this.playerData) {
       this.playerData[player].stock = 0;
     }
   }
@@ -91,8 +91,8 @@ class Coin {
    * @description 액면분할
    */
   split() {
-    this._current = Math.floor(this._current/5);
-    for(let player in this.playerData) {
+    this._current = Math.floor(this._current / 5);
+    for (let player in this.playerData) {
       this.playerData[player].stock *= 5;
     }
   }
@@ -126,14 +126,16 @@ class Coin {
       this.playerData[player].money += this._current * count;
       return true;
     } else {
-        return false;
+      return false;
     }
   }
 
   createPlayer(player) {
-    this.playerData[player] = {};
-    this.playerData[player].money = 1000000;
-    this.playerData[player].stock = 0;
+    if (!this.playerData[player]) {
+      this.playerData[player] = {};
+      this.playerData[player].money = 1000000;
+      this.playerData[player].stock = 0;
+    }
   }
 }
 
