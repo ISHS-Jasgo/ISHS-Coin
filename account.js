@@ -5,9 +5,8 @@ class Account {
      * 
      * @param {String} ID 
      * @param {Number} money 
-     * @param {Stock} stock  
      */
-    constructor(ID, money, stockList) {
+    constructor(ID, money) {
         this.ID = ID;
         this.money = money;
         this.stockList = [0, 0, 0, 0];

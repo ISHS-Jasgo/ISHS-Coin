@@ -1,12 +1,21 @@
 const { Account } = require("./account");
 
 class StockManager {
+
+    /**
+     * 
+     * @param {Stock[]} stockList 
+     */
     constructor(stockList) {
         this.stockList = stockList;
     }
 
     get stockList() {
-        return this.stockList;
+        return this._stockList;
+    }
+    
+    set stockList(stockList) {
+        this._stockList = stockList;
     }
 
     /**
