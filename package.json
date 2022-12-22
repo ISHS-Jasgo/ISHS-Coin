@@ -2,7 +2,7 @@
   "dependencies": {
     "express": "^4.18.2"
   },
-  "name": "ishs-coin",
+  "name": "stock",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {

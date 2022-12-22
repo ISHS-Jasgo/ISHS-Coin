@@ -1,0 +1,147 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+}
+
+.container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -ms-user-select: none; 
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    display: grid;
+    grid-template-columns: repeat(2, 600px);
+    transition: 0.3s;
+}
+
+
+.prev{
+    width: 600px;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    transition: 0.3s;
+}
+
+
+.stock{
+    width: 600px;
+    height: 450px;
+    border-radius: 15px;
+    box-shadow: 0 0 5px #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.stock > h2{
+    margin: -25px 0 15px 0;
+    padding: 0;
+    font-weight: normal;
+}
+.stock > div{
+    margin-bottom: 30px;
+}
+.stock > div:last-child{
+    margin-bottom: 0;
+}
+.a1{
+    display: flex;
+}
+.a1 > div{
+    width: 250px;
+    height: 150px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px #000 inset;
+    margin-right: 30px;
+    display: flex;
+    justify-content: center;
+    transition: 0.15s;
+}
+.a1 > div:last-child{
+    margin-right: 0;
+}
+.a1 > div:hover{
+    box-shadow: 0 0 7px rgb(0, 255, 94) inset;
+}
+.a2{
+    display: flex;
+}
+.a2 > div{
+    width: 250px;
+    height: 150px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px #000 inset;
+    margin-right: 30px;
+    display: flex;
+    justify-content: center;
+    transition: 0.15s;
+}
+.a2 > div:last-child{
+    margin-right: 0;
+}
+.a2 > div:hover{
+    box-shadow: 0 0 7px rgb(0, 255, 94) inset;
+}
+
+
+
+
+
+.manage{
+    width: 120px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 17px;
+    font-weight: bold;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgb(255, 0, 0);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.15s;
+    cursor: pointer;
+    text-decoration: none;
+    color: #000;
+}
+.manage:hover{
+    box-shadow: 0 0 7px rgb(255, 140, 0);
+    color: #555;
+}
+.manage:active{
+    color: #000;
+}
+
+
+
+
+
+
+
+
+
+@media(max-width:1300px){
+    .container{
+        display: block;
+        top: 0;
+        transform: translate(-50%,0);
+    }
+}
+
+
+
+
+
+
+

@@ -1,0 +1,106 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    -ms-user-select: none; 
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: grid;
+    grid-template-columns: repeat(2, 600px);
+}
+
+
+
+
+
+.player-list{
+    width: 600px;
+    height: 450px;
+    border: 1px solid #000;
+}
+.students{
+    width: 600px;
+    height: 100%;
+    border: 1px solid #000;
+    box-sizing: border-box;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.info{
+    width: 600px;
+    height: 50px;
+    border: 1px solid #000;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+}
+.info > div{
+    height: 40px;
+    border-radius: 7px;
+    border: 1px solid #000;
+    line-height: 40px;
+}
+.name{
+    width: 360px;
+}
+.stop{
+    margin: 0 10px;
+    padding: 0 20px;
+    border: 1px solid #000;
+    cursor: pointer;
+}
+.stop:hover{
+    border: 1px solid red;
+    background-color: red;
+}
+.comp{
+    padding: 0 20px;
+    border: 1px solid #000;
+    cursor: pointer;
+}
+.comp:hover{
+    border: 1px solid blue;
+    background-color: blue;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

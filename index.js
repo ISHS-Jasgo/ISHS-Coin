@@ -1,5 +1,6 @@
 const coinlib = require("./coin");
 const express = require("express");
+const stocklib = require("./stock.js");
 
 const coin = new coinlib.Coin();
 
