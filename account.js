@@ -1,5 +1,3 @@
-const { Stock } = require('./stock.js');
-
 class Account {
     /**
      * 

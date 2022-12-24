@@ -2,12 +2,12 @@ class Stock {
     /**
      * 
      * @param {Number} startValue 
-     * @param {Number} currentvalue 
+     * @param {Number} currentValue 
      * @param {Number} fluctation 
      */
-    constructor(startValue, currentvalue, fluctation) {
+    constructor(startValue, currentValue, fluctation) {
         this.startValue = startValue
-        this.currentvalue = currentvalue;
+        this.currentValue = currentValue;
         this.fluctation = fluctation;
         this.updownRate = 1;
         this.buyRate = 100;
@@ -16,6 +16,10 @@ class Stock {
 
     get startValue() {
         return this._startValue;
+    }
+
+    get currentValue() {
+        return this._currentValue;
     }
 
     get fluctation() {
@@ -38,8 +42,8 @@ class Stock {
         this._startValue = startValue;
     }
 
-    set currentvalue(currentValue) {
-        this._currentvalue = currentValue;
+    set currentValue(currentValue) {
+        this._currentValue = currentValue;
     }
 
     set fluctation(fluctation) {

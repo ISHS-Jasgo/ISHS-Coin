@@ -5,13 +5,14 @@ const Account = require("./account.js");
 const manager = require("./stockmanager.js");
 const fs = require("fs");
 const stockManager = new manager.StockManager([
-  new stockList.Stock(), // SungSam
-  new stockList.Stock(), // PineApple
-  new stockList.Stock(), // Kokoa
-  new stockList.Stock(), // Nestla
+  new stockList.Stock(100000, 100000, 0.1), // SungSam
+  new stockList.Stock(100000, 100000, 0.1), // Kokoa
+  new stockList.Stock(100000, 100000, 0.1), // Nestla
+  new stockList.Stock(100000, 100000, 0.1), // PineApple
 ]);
 var accountList = [];
 var idList = [];
+var stockValue = [0, 0, 0, 0];
 
 app.set("port", 3000);
 app.use(express.static(__dirname + "/public"));
@@ -32,8 +33,11 @@ app.get("/", (req, res) => {
 app.post("/login/:ID", (req, res) => {
   let ID = req.params.ID;
   if (idList.includes(ID)) {
-    let account = new Account.Account(ID, 0, null);
+    let account = new Account.Account(ID, 0);
     accountList.push(account);
+    res.sendStatus(200);
+  } else {
+    res.sendStatus(403);
   }
 });
 
@@ -42,24 +46,40 @@ app.post("/buy/:ID/:stock/:count", (req, res) => {
   let count = Number(req.params.count);
   let index = Number(req.params.stock);
   let account = accountList.filter((account) => account.ID == ID)[0];
-  if (stockManager.buy(account, index)) {
-    //주식 구매 성공
+  if (stockManager.buy(account, index, count)) {
+    res.sendStatus(200);
   } else {
-    //주식 구매 실패
+    res.sendStatus(403);
   }
 });
 
-app.post("/buy/:ID/:stock/:count", (req, res) => {
+app.post("/sell/:ID/:stock/:count", (req, res) => {
   let ID = req.params.ID;
   let count = Number(req.params.count);
   let index = Number(req.params.stock);
   let account = accountList.filter((account) => account.ID == ID)[0];
-  if (stockManager.sell(account, index)) {
-    //주식 판매 성공
+  if (stockManager.sell(account, index, count)) {
+    res.sendStatus(200);
   } else {
-    //주식 판매 실패
+    res.sendStatus(403);
   }
 });
+
+app.post("/updateMoney/:ID", (req, res) => {
+  let ID = req.params.ID;
+  let account = accountList.filter(account => account.ID == ID)[0];
+  res.send({money: account.money});
+})
+
+app.post("/updateStockList/:ID", (req, res) => {
+  let ID = req.params.ID;
+  let account = accountList.filter(account => account.ID == ID)[0];
+  res.send({stockList: account.stockList});
+})
+
+app.post("/updateStockValue/", (req, res) => {
+  res.send({stockValues: stockValue});
+})
 
 app.listen(3000, () => {
   console.log("Server On")
@@ -68,6 +88,7 @@ app.listen(3000, () => {
 setInterval(() => {
   for (let i = 0; i < 4; i++) {
     stockManager.update(i);
-    console.log(stockManager.stockList[i].currentValue);
+    stockValue[i] = stockManager.stockList[i].currentValue;
   }
+  console.log(`${stockValue[0]} ${stockValue[1]} ${stockValue[2]} ${stockValue[3]}`)
 }, 1000);

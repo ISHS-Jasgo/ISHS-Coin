@@ -68,13 +68,15 @@ class StockManager {
      * @param {Number} index 
      */
     update(index) {
-        let stock = this.stockList[index];
+        let stock = this._stockList[index];
         let random = Math.floor(Math.random() * 200) + 1;
         let updownRate = Math.floor(stock.updownRate * 100);
-        if (random > 100 - updownRate) {
-            stock.currentValue += stock.currentValue * stock.fluctation;
+        let random2 = (Math.floor(Math.random() * 100) + 1)/100;
+        let random3 = (Math.floor(Math.random() * 120) + 1)/100;
+        if (random > 200 - updownRate) {
+            stock.currentValue = Math.floor(stock.currentValue + stock.currentValue * stock.fluctation * random3);
         } else {
-            stock.currentValue -= stock.currentValue * stock.fluctation;
+            stock.currentValue = Math.floor(stock.currentValue - stock.currentValue * stock.fluctation * random2);
         }
     }
 }
