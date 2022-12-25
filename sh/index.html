@@ -14,7 +14,7 @@
             <h2>Login</h2>
             <div class="snum">
                 <h5>인증코드</h5>
-                <input type="text" placeholder="ID을 입력하세요">
+                <input id="id" type="text" placeholder="ID을 입력하세요">
             </div>
             <a href="../거래창/deal.html" class="start">접속하기</a>
         </div>
@@ -28,6 +28,16 @@
     메인페이지
     -->
 
+    <script src="../public/stockapp.js" type="module"></script>
+    <script>
+        import StockApp from '../public/stockapp.js';
+        const stockapp = new StockApp();
+        const btn = document.querySelector("a");
+
+        btn.addEventListener('click', () => {
+            stockapp.login(document.getElementById("id").value);
+        });
+    </script>
 
 </body>
 </html>

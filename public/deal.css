@@ -1,0 +1,332 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    -ms-user-select: none; 
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    transition: 0.3s;
+    /* font-family: 'Black Han Sans', sans-serif;
+    font-family: 'Dongle', sans-serif;
+    font-family: 'Jua', sans-serif;
+    font-family: 'Nanum Pen Script', cursive; */
+}
+
+
+.container{
+    width: 100%;
+    height: 100vh;
+}
+.inner{
+    height: auto;
+    padding-bottom: 10px;
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.title{
+    width: 100%;
+    height: 27px;
+    font-size: 20px;
+    font-family: 'Dongle', sans-serif;
+}
+.content{
+    height: calc(100% - 27px);
+    font-family: 'Jua', sans-serif;
+}
+.graph{
+    width: 100%;
+    height: calc(100% - 20px);
+    border: 2px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+
+/*---------- chart ----------*/
+.chart{
+    width: 700px;
+    height: 600px;
+    margin-right: 10px;
+}
+.chart .title{
+    padding-left: 3px;
+}
+.chart .content{
+    display: flex;
+    flex-direction: column;
+}
+.a1{
+    width: 100%;
+    height: calc(50% - 2.5px);
+    display: flex;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+.a2{
+    width: 100%;
+    height: calc(50% - 2.5px);
+    display: flex;
+    font-size: 14px;
+}
+.sungsam{
+    width: 50%;
+    height: 100%;
+    border: 1px solid #000;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+.sungsam span{
+    padding-left: 10px;
+}
+.pineaplle{
+    width: 50%;
+    height: 100%;
+    border: 1px solid #000;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+.pineaplle span{
+    padding-left: 10px;
+}
+.kokoa{
+    width: 50%;
+    height: 100%;
+    border: 1px solid #000;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+.kokoa span{
+    padding-left: 10px;
+}
+.nestla{
+    width: 50%;
+    height: 100%;
+    border: 1px solid #000;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+.nestla span{
+    padding-left: 10px;
+}
+
+
+
+/*----- info -----*/
+.info{
+    width: 300px;
+    height: 600px;
+}
+
+/*---------- mst ----------*/
+.mst{
+    width: 100%;
+    height: 40%;
+}
+.mst .title{
+    padding-left: 3px;
+}
+.mst .content{
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+.mst-text{
+    width: calc(100% - 20px);
+    height: calc(100% - 10px);
+    margin: 5px 10px;
+}
+.stock{
+    width: 100%;
+    border-left: 2px solid #000;
+    margin-left: 6px;
+    padding-left: 4px;
+}
+.logout{
+    font-family: 'Jua', sans-serif;
+    font-size: 14px;
+    padding: 5px 10px;
+    border: none;
+    background-color: rgba(200, 250, 255, 0.2);
+    border-radius: 5px;
+    box-shadow: 0 0 3px #aaa;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+}
+
+
+
+
+/*---------- deal ----------*/
+.deal{
+    width: 100%;
+    height: calc(60% - 6px);
+    margin-top: 6px;
+}
+.deal .title{
+    padding-left: 3px;
+}
+.deal .content{
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+.deal-text{
+    width: calc(100% - 20px);
+    height: calc(100% - 10px);
+    margin: 5px 10px;
+}
+.deal-category{
+    font-family: 'Jua', sans-serif;
+    padding: 3px;
+    border-radius: 3px;
+    font-size: 15px;
+}
+.deal-stock{
+    font-family: 'Jua', sans-serif;
+    padding: 3px;
+    border-radius: 3px;
+    font-size: 15px;
+}
+.deal-count{
+    font-family: 'Jua', sans-serif;
+    width: 100px;
+    padding-left: 3px;
+    font-size: 15px;
+}
+.deal-btn{
+    display: inline-block;
+    margin: 3px 0;
+    padding: 3px 10px;
+    border-radius: 5px;
+    background-color: rgb(255, 52, 52);
+    cursor: pointer;
+}
+.deal-btn:hover{
+    background-color: rgb(213, 44, 44);
+}
+
+
+
+
+
+
+
+
+
+
+
+/*---------- responsive css ----------*/
+@media(max-width:1100px){
+    .container{
+        height: auto;
+    }
+    .inner{
+        display: flex;
+        flex-direction: column-reverse;
+        width: 700px;
+        top: 0;
+        transform: translate(-50%,0);
+        margin-top: 5px;
+    }
+    .chart{
+        width: 100%;
+        margin-right: 0;
+    }
+    .info{
+        width: 100%;
+        height: auto;
+    }
+    .mst-text{
+        padding-bottom: 5px;
+    }
+}
+@media(max-width:750px){
+    .inner{
+        width: 345px;
+    }
+    .chart{
+        height: 1200px;
+    }
+    .a1{
+        display: inline-block;
+        height: calc(50% - 2.5px);
+    }
+    .a2{
+        display: inline-block;
+        height: calc(50% - 2.5px);
+    }
+    .sungsam{
+        width: 100%;
+        height: calc(50% - 2.5px);
+        margin-bottom: 5px;
+    }
+    .pineaplle{
+        width: 100%;
+        height: calc(50% - 2.5px);
+    }
+    .kokoa{
+        width: 100%;
+        height: calc(50% - 2.5px);
+        margin-bottom: 5px;
+    }
+    .nestla{
+        width: 100%;
+        height: calc(50% - 2.5px);
+    }
+}
+@media(max-width:350px){
+    .inner{
+        width: 100%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

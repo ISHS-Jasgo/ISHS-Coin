@@ -1,90 +1,128 @@
-body{
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-.container{
+    text-decoration: none;
     -ms-user-select: none; 
     -moz-user-select: -moz-none;
     -khtml-user-select: none;
     -webkit-user-select: none;
     user-select: none;
+    transition: 0.3s;
+}
+
+
+
+
+.container{
+    width: 100%;
+    height: 100vh;
+}
+.player-operation{
+    width: 500px;
+    height: 300px;
+    padding: 10px;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
-    display: grid;
-    grid-template-columns: repeat(2, 600px);
-}
-
-
-
-
-
-.player-list{
-    width: 600px;
-    height: 450px;
-    border: 1px solid #000;
-}
-.students{
-    width: 600px;
-    height: 100%;
-    border: 1px solid #000;
-    box-sizing: border-box;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-.info{
-    width: 600px;
-    height: 50px;
+    transform: translate(-50%, -50%);
     border: 1px solid #000;
     display: flex;
+    justify-content: center;
     align-items: center;
-    box-sizing: border-box;
+    border-radius: 10px;
 }
-.info > div{
-    height: 40px;
-    border-radius: 7px;
-    border: 1px solid #000;
-    line-height: 40px;
+.moop{
+    display: inline-block;
+    background-color: rgb(255, 52, 52);
+    border-radius: 5px;
+    padding: 5px 15px;
+    color: #fff;
+    margin-top: 5px;
+    cursor: pointer;
+    border: none;
+    font-size: 14px;
 }
-.name{
-    width: 360px;
+.moop:hover{
+    background-color: rgb(213, 44, 44);
 }
 .stop{
-    margin: 0 10px;
-    padding: 0 20px;
-    border: 1px solid #000;
+    display: inline-block;
+    background-color: rgb(255, 52, 52);
+    border-radius: 5px;
+    padding: 5px 15px;
+    color: #fff;
+    margin-top: 5px;
     cursor: pointer;
+    border: none;
+    font-size: 14px;
 }
 .stop:hover{
-    border: 1px solid red;
-    background-color: red;
+    background-color: rgb(213, 44, 44);
 }
-.comp{
-    padding: 0 20px;
-    border: 1px solid #000;
+
+
+
+
+.stock{
+    width: 100%;
+    border-left: 2px solid #000;
+    margin-left: 6px;
+}
+
+
+
+
+
+@media(max-width:550px){
+    .player-operation{
+        width: 300px;
+    }
+}
+
+
+
+
+
+.money-operation{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 100;
+}
+.mpi{
+    width: 300px;
+    height: 200px;
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    box-shadow: 0 0 7px #333;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 101;
+}
+.mpi-btn{
+    display: inline-block;
+    background-color: rgb(255, 52, 52);
+    border-radius: 5px;
+    padding: 5px 15px;
+    color: #fff;
+    margin: 30px 0 0 95px;
     cursor: pointer;
+    border: none;
+    font-size: 14px;
 }
-.comp:hover{
-    border: 1px solid blue;
-    background-color: blue;
+.mpi-btn:hover{
+    background-color: rgb(213, 44, 44);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

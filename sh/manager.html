@@ -10,27 +10,39 @@
 <body>
     
     <div class="container">
-        <div class="player-list">
-            <ul class="students">
-                <li class="info">
-                    <div class="name">
-                        XXX
-                    </div>
-                    <div class="stop">
-                        강제중지
-                    </div>
-                    <div class="comp">
-                        가격변경
-                    </div>
-                </li>
-            </ul>
+        <div class="player-operation">
+            <div class="inner">
+                ID입력 : <input type="text" class="id"> <br>
+                보유 금액 : <span id="money"></span>원 <br>
+                보유 주식<br>
+                <div class="stock">
+                    Sungsam : <span id="sungsam-count"></span>주 <span id="sungsam-percent"></span>% <br>
+                    PineApple : <span id="pineapple-count"></span>주 <span id="pineapple-percent"></span>% <br>
+                    Kokoa : <span id="kokoa-count"></span>주 <span id="kokoa-percent"></span>% <br>
+                    Nestla : <span id="nestla-count"></span>주 <span id="nestla-percent"></span>% <br>
+                </div>
+                <button class="moop">
+                    금액 조작
+                </button>
+                <button class="stop">
+                    강제 중지
+                </button>
+            </div>
         </div>
     </div>
 
-    <!-- 주식목록
-    학생 목록
-    강제중지
-    가격변경
-     -->
+    <div class="money-operation">
+        <div class="mpi">
+            <div class="inner">
+                현재 금액 : <span id="money"></span>원 <br>
+                변경 금액 : <input type="text" id="money-operation"> <br>
+                <button class="mpi-btn">변경</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+    </script>
 </body>
 </html>

@@ -12,33 +12,41 @@ class Account {
     }
 
     get ID() {
-        return this.ID;
+        return this._ID;
     }
 
     get money() {
-        return this.money;
+        return this._money;
     }
 
     get stockList() {
-        return this.stockList;
+        return this._stockList;
     }
 
     get isBanned() {
-        return this.isBanned;
+        return this._isBanned;
+    }
+
+    set ID(ID) {
+        this._ID = ID;
     }
 
     /**
      * @param {Number} money
      */
     set money(money) {
-        this.money = money;
+        this._money = money;
     }
 
     /**
      * @param {boolean} isBanned
      */
     set isBanned(isBanned) {
-        this.isBanned = isBanned;
+        this._isBanned = isBanned;
+    }
+
+    set stockList(stockList) {
+        this._stockList = stockList;
     }
 }
 

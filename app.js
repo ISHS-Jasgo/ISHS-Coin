@@ -27,15 +27,19 @@ for (let i = 0; i < 500; i++) {
 fs.writeFileSync("test.txt", str);
 
 app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/index.html");
+  res.sendFile(__dirname + "/public/test.html");
 });
 
 app.post("/login/:ID", (req, res) => {
   let ID = req.params.ID;
   if (idList.includes(ID)) {
-    let account = new Account.Account(ID, 0);
-    accountList.push(account);
-    res.sendStatus(200);
+    if (accountList.find((account) => account.ID == ID) == null) {
+      let account = new Account.Account(ID, 500000);
+      accountList.push(account);
+      res.sendStatus(200);
+    } else {
+      res.sendStatus(200);
+    }
   } else {
     res.sendStatus(403);
   }
@@ -45,7 +49,7 @@ app.post("/buy/:ID/:stock/:count", (req, res) => {
   let ID = req.params.ID;
   let count = Number(req.params.count);
   let index = Number(req.params.stock);
-  let account = accountList.filter((account) => account.ID == ID)[0];
+  let account = accountList.find((account) => account.ID == ID);
   if (stockManager.buy(account, index, count)) {
     res.sendStatus(200);
   } else {
@@ -57,7 +61,7 @@ app.post("/sell/:ID/:stock/:count", (req, res) => {
   let ID = req.params.ID;
   let count = Number(req.params.count);
   let index = Number(req.params.stock);
-  let account = accountList.filter((account) => account.ID == ID)[0];
+  let account = accountList.find((account) => account.ID == ID);
   if (stockManager.sell(account, index, count)) {
     res.sendStatus(200);
   } else {
@@ -67,28 +71,36 @@ app.post("/sell/:ID/:stock/:count", (req, res) => {
 
 app.post("/updateMoney/:ID", (req, res) => {
   let ID = req.params.ID;
-  let account = accountList.filter(account => account.ID == ID)[0];
-  res.send({money: account.money});
-})
+  let account = accountList.find((account) => account.ID == ID);
+  res.send({ money: account.money });
+});
 
 app.post("/updateStockList/:ID", (req, res) => {
   let ID = req.params.ID;
-  let account = accountList.filter(account => account.ID == ID)[0];
-  res.send({stockList: account.stockList});
-})
+  let account = accountList.find((account) => account.ID == ID);
+  res.send({ stockList: account.stockList });
+});
 
 app.post("/updateStockValue/", (req, res) => {
-  res.send({stockValues: stockValue});
-})
+  res.send({ stockValues: stockValue });
+});
 
 app.listen(3000, () => {
-  console.log("Server On")
-})
+  console.log("Server On");
+});
 
 setInterval(() => {
   for (let i = 0; i < 4; i++) {
-    stockManager.update(i);
-    stockValue[i] = stockManager.stockList[i].currentValue;
+    if (stockManager.update(i)) {
+      stockValue[i] = stockManager.stockList[i].currentValue;
+    } else {
+      stockValue[i] = 0;
+      accountList.forEach((account) => {
+        account.stockList[i] = 0;
+      });
+    }
   }
-  console.log(`${stockValue[0]} ${stockValue[1]} ${stockValue[2]} ${stockValue[3]}`)
+  console.log(
+    `${stockValue[0]} ${stockValue[1]} ${stockValue[2]} ${stockValue[3]}`
+  );
 }, 1000);

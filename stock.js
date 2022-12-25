@@ -9,9 +9,10 @@ class Stock {
         this.startValue = startValue
         this.currentValue = currentValue;
         this.fluctation = fluctation;
-        this.updownRate = 1;
+        this.updownRate = 0;
         this.buyRate = 100;
         this.sellRate = 100;
+        this.isDelisted = false;
     }
 
     get startValue() {
@@ -60,6 +61,10 @@ class Stock {
 
     set updownRate(updownRate) {
         this._updownRate = updownRate;
+    }
+
+    set isDelisted(isDelisted) {
+        this._isDelisted = isDelisted;
     }
 }
 

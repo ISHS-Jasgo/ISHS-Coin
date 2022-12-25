@@ -40,7 +40,8 @@ body{
     outline: none;
 }
 
-.start{
+#start{
+    all: unset;
     width: auto;
     height: auto;
     position: absolute;
@@ -55,9 +56,10 @@ body{
     text-decoration: none;
     color: #000;
 }
-.start:hover{
+#start:hover{
     box-shadow: 0 0 5px rgb(98, 0, 255);
 }
-.start:active{
+
+#start:active{
     color: #000;
 }
