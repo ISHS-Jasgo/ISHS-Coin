@@ -166,3 +166,7 @@ async function update() {
 document.getElementById("deal-btn").addEventListener('click', () => {
   order(document.getElementById("deal-stock").value);
 })
+
+document.getElementById("logout").addEventListener('click', () => {
+  location.href = "/";
+})
