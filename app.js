@@ -16,6 +16,7 @@ var stockValue = [0, 0, 0, 0];
 
 app.set("port", 3000);
 app.use(express.static(__dirname + "/public"));
+app.use(cors());
 
 let str = "";
 for (let i = 0; i < 500; i++) {
