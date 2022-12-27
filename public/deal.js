@@ -30,7 +30,7 @@ function requestData() {
     kokoa.series[0].addPoint(point3, true, shift3);
     nestla.series[0].addPoint(point4, true, shift4);
     count++;
-  }, 1000);
+  }, 30000);
 }
 
 async function initializeData() {
