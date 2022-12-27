@@ -29,6 +29,10 @@ app.get("/", (req, res) => {
   res.sendFile(__dirname + "/public/test.html");
 });
 
+app.get("/view", (req, res) => {
+  res.sendFile(__dirname + "/public/index_view.html");
+})
+
 app.post("/login/:ID", (req, res) => {
   let ID = req.params.ID;
   if (idList.includes(ID)) {

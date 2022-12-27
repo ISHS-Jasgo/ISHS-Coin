@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Dongle:wght@300;400;700&family=Jua&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./deal _view.css">
+    <title>인곽 주식 거래소</title>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="inner">
+            <div class="chart">
+                <div class="title">주가 차트</div>
+                <div class="content">
+                    <div class="a1">
+                        <div class="sungsam">
+                            <span>Sungsam</span>
+                            <div class="graph" id="sungsam">
+                                <div id="sg"></div>
+                            </div>
+                        </div>
+                        <div class="pineaplle">
+                            <span>PineApple</span>
+                            <div class="graph" id="pinaplle">
+                                <div id="pg"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="a2">
+                        <div class="kokoa">
+                            <span>Kokoa</span>
+                            <div class="graph" id="kokoa">
+                                <div id="kg"></div>
+                            </div>
+                        </div>
+                        <div class="nestla">
+                            <span>Nestla</span>
+                            <div class="graph" id="nestla">
+                                <div id="ng"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="info">
+                <div class="mst">
+                    <div class="title">내 정보</div>
+                    <div class="content">
+                        <div class="mst-text">
+                            내 ID : <span id="id"></span><br>
+                            내 잔고 : <span id="money"></span>원<br>
+                            내 주식<br>
+                            <div class="stock">
+                                Sungsam : <span id="sungsam-count">10</span>주<br>
+                                PineApple : <span id="pineapple-count"></span>주<br>
+                                Kokoa : <span id="kokoa-count"></span>주<br>
+                                Nestla : <span id="nestla-count"></span>주<br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="./stockapp.js" type="module"></script>
+    <script src="./deal_view.js" type="module"></script>
+</body>
+</html>
