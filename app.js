@@ -106,4 +106,4 @@ setInterval(() => {
   console.log(
     `${stockValue[0]} ${stockValue[1]} ${stockValue[2]} ${stockValue[3]}`
   );
-}, 1000);
+}, 30000);
